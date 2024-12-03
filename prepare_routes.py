@@ -19,4 +19,5 @@ if __name__ == "__main__":
                                                'דן בדרום', 'אקסטרה', 'נתיב אקספרס', 'אגד',
                                                'דן', 'סופרבוס', 'דן באר שבע',
                                                'אקסטרה ירושלים',  'בית שמש אקספרס', 'גלים'])].copy().reset_index(drop=True)
+    routes['geometry'] = routes.simplify(0.0001)
     routes.to_file('routes_with_ridership.geojson')
